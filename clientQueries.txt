@@ -1,0 +1,79 @@
+----------------------------
+
+
+query getAllUsers{
+  users{
+    id
+    firstName
+    lastName
+    email
+    password
+  }
+}
+
+
+-------------------------------
+# Write your query or mutation here
+query getAllUsers{
+  users{
+    id
+    firstName
+    lastName
+    email
+    password
+  }
+  quotes{
+    name
+    by
+  }
+}
+
+
+-------------------------------------------
+# Write your query or mutation here
+query getAllUsers{
+  users{
+    id
+    firstName
+    lastName
+    email
+    password
+    quotes{
+    	name
+    	by
+  	}
+  }
+  
+}
+
+
+
+------------------------------------------------
+query getUserById($userid:ID!){
+  user(id:$userid){
+    id
+    firstName
+    lastName
+    email
+  }
+}
+
+-------------------------------------------------
+mutation {
+  signupUserDummy(firstName:"ram",lastName:"varma",email:"abc@abc.com",password:"12345"){
+    id
+    email
+    firstName
+    lastName
+  }
+}
+
+--------------------------------------------------
+mutation createUser($userNew:UserInput!){
+  signupUserDummy(userNew:$userNew){
+    id
+    firstName
+    lastName
+    email
+  }
+}
